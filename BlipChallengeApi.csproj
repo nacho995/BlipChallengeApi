@@ -11,4 +11,12 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="10.0.1" />
   </ItemGroup>
 
+  <!-- Excluir la carpeta del proyecto de tests del compile del proyecto principal -->
+  <ItemGroup>
+    <Compile Remove="BlipChallengeApi.Tests/**" />
+    <Content Remove="BlipChallengeApi.Tests/**" />
+    <None Remove="BlipChallengeApi.Tests/**" />
+    <EmbeddedResource Remove="BlipChallengeApi.Tests/**" />
+  </ItemGroup>
+
 </Project>
