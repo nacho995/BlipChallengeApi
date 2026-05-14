@@ -27,6 +27,25 @@ Después abre /swagger en el navegador para ver la documentación interactiva, o
     GET /api/repositories
 
 
+## Correr en Docker
+
+Si prefieres ejecutarlo con Docker en vez de instalar el SDK de .NET en tu máquina, el repo incluye un Dockerfile multi-stage listo para usar.
+
+    docker build -t blipchallengeapi .
+    docker run -p 8080:8080 blipchallengeapi
+
+Después la API estará en http://localhost:8080/api/repositories y Swagger en http://localhost:8080/swagger.
+
+El Dockerfile usa dos stages: uno con el SDK completo para compilar, y otro con solo el runtime para ejecutar. La imagen final pesa unos 370 MB, mucho menos que si metiéramos el SDK entero. Es el patrón que recomienda Microsoft.
+
+
+## Tests
+
+El proyecto BlipChallengeApi.Tests contiene 12 tests unitarios con xUnit y NSubstitute. Cubren la lógica del service (filtrado por C#, orden ascendente por fecha, mapping, manejo de errores HTTP) y la del controller (respuestas OK, lista vacía, errores 500). Para correrlos:
+
+    dotnet test
+
+
 ## URL desplegada
 
 https://blipchallengeapi-nacho995.azurewebsites.net/api/repositories

@@ -1,0 +1,39 @@
+# Build outputs (se regeneran dentro del build)
+**/bin/
+**/obj/
+
+# IDE / editor files
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# Tests (no van en la imagen de producción)
+BlipChallengeApi.Tests/
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# GitHub Actions
+.github/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Documentación (no se necesita en el contenedor)
+README.md
+*.md
+
+# Docker (no nos copiamos a nosotros mismos)
+Dockerfile
+.dockerignore
+
+# HTTP files (de pruebas locales con VS Code)
+*.http
