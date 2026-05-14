@@ -1,6 +1,6 @@
 @BlipChallengeApi_HostAddress = http://localhost:5052
 
-GET {{BlipChallengeApi_HostAddress}}/weatherforecast/
+GET {{BlipChallengeApi_HostAddress}}
 Accept: application/json
 
 ###
